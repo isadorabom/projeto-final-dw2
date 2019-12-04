@@ -10,10 +10,10 @@ const routes = Router();
 
 routes.get("/users/:email", UserController.index);
 routes.post("/sessions", SessionController.store);
+routes.get("/teste", (req, res) => res.json({ ok: true }));
 
 routes.use(authMiddleware);
 routes.post("/users", authorizationMiddleware, UserController.store);
 routes.delete("/users/:id", authorizationMiddleware, UserController.destroy);
-routes.get("/teste", (req, res) => res.json({ ok: true }));
 
 module.exports = routes;
