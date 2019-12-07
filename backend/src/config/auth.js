@@ -1,4 +1,4 @@
 module.exports = {
 	secret: "isadora",
-	ttl: "1d"
+	ttl: "10d"
 };

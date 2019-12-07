@@ -8,12 +8,12 @@ const authorizationMiddleware = require("./middlewares/authorization");
 
 const routes = Router();
 
-routes.get("/users/:email", UserController.index);
-routes.post("/sessions", SessionController.store);
+routes.get("/user/:email", UserController.index);
+routes.post("/session", SessionController.store);
 routes.get("/teste", (req, res) => res.json({ ok: true }));
 
 routes.use(authMiddleware);
-routes.post("/users", authorizationMiddleware, UserController.store);
-routes.delete("/users/:id", authorizationMiddleware, UserController.destroy);
+routes.post("/user", authorizationMiddleware, UserController.store);
+routes.delete("/user/:id", authorizationMiddleware, UserController.destroy);
 
 module.exports = routes;
