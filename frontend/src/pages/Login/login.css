@@ -1,0 +1,74 @@
+div#root {
+	background-size: cover;
+	background-image: url(/images/background.jpg);
+}
+
+div#login-page {
+	display: flex;
+	height: 100%;
+}
+
+div.filter {
+	flex: 0.6;
+	backdrop-filter: blur(3px);
+	backdrop-filter: brightness(50%);
+}
+
+img.logo {
+	width: 50%;
+	position: absolute;
+	top: 0;
+	margin: 20px 0 0 0;
+	-webkit-filter: drop-shadow(0px 0px 4px #900);
+}
+
+div.sidebar,
+div.sidebar form {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+div.sidebar {
+	background-color: #111;
+	flex: 0.4;
+	justify-content: space-around;
+	-webkit-filter: drop-shadow(5px 0px 100px #000);
+}
+
+div.sidebar form {
+	width: 90%;
+	flex: 0.6;
+	justify-content: space-around;
+}
+h1.title-form {
+	font-size: 26px;
+}
+div.sidebar form input,
+div.sidebar form button {
+	width: 90%;
+	color: #fafafa;
+	font-weight: bold;
+	font-size: 22px;
+	flex: 0.15;
+}
+
+div.sidebar form input {
+	border: none;
+	border-bottom: solid 1px white;
+	background: transparent;
+}
+
+div.sidebar form input:focus {
+	border-bottom: 3px solid #780000;
+}
+div.sidebar form input::placeholder {
+	color: #bababa;
+}
+div.sidebar form button {
+	background: #780000;
+	border: solid 1px #780000;
+	border-radius: 3px;
+	outline: none;
+	cursor: pointer;
+}
