@@ -14,4 +14,12 @@ body {
 
 div#root {
 	height: 100vh;
+	background-size: cover;
+	background-image: url(/images/background.jpg);
+}
+
+div.area {
+	flex: 1;
+	backdrop-filter: blur(15px) brightness(50%);
+	display: flex;
 }

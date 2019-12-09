@@ -1,0 +1,27 @@
+div.option {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 160px;
+	height: 160px;
+	margin: 25px;
+	justify-content: center;
+	cursor: pointer;
+	border-radius: 10px;
+	color: #eee;
+	background-color: rgba(0, 0, 0, 0.6);
+	-webkit-filter: drop-shadow(0px 0px 9px #000);
+}
+div.option:hover {
+	background-color: rgba(0, 0, 0, 0.8);
+	-webkit-filter: drop-shadow(0px 0px 11px #000);
+	color: white;
+}
+div.option .icon {
+	width: 75px;
+	height: 75px;
+}
+div.option .title {
+	font-size: 18px;
+	font-weight: bold;
+}

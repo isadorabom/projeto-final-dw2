@@ -1,10 +1,16 @@
 import React from "react";
-
+import Routes from "./routes";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import "./styles.css";
 
-import Login from "./pages/Login";
 function App() {
-	return <Login />;
+	return (
+		<>
+			<Routes />
+			<ToastContainer autoClose={3000} />
+		</>
+	);
 }
 
 export default App;

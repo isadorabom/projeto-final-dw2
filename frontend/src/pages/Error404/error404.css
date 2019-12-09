@@ -1,0 +1,18 @@
+#error404-page {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	backdrop-filter: blur(2px) brightness(50%);
+	height: 100%;
+}
+#error404-page h1,
+#error404-page h2 {
+	text-shadow: 5px 0px 10px #000;
+}
+#error404-page h1 {
+	font-size: 5em;
+}
+#error404-page h2 {
+	font-size: 4em;
+}

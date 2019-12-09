@@ -13,7 +13,6 @@ module.exports = {
 		if (!(await user.compareHash(password))) {
 			return res.json({ error: "Invalid password." });
 		}
-
 		const { _id, name, isAdmin } = user;
 
 		return res.json({
