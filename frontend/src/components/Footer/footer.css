@@ -1,9 +1,0 @@
-footer {
-	background-color: #111;
-	height: 100%;
-	display: flex;
-	flex: 0.07;
-}
-footer span {
-	margin: auto;
-}
