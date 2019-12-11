@@ -1,78 +1,68 @@
-#menu-page {
-	display: flex;
-	flex-direction: column;
+#menu {
+	margin: 15px;
 	height: 100%;
-}
-#menu-page .box {
-	margin: auto;
 	display: flex;
 	flex-direction: column;
-	width: 800px;
-	height: 500px;
-	align-items: flex-start;
-	justify-content: center;
-	padding: 25px;
-	border-radius: 10px;
-	overflow: hidden;
-	box-shadow: 0px 0px 20px #000;
-	background-color: rgba(0, 0, 0, 0.7);
 }
-#menu-page .box form {
-	width: 100%;
-	display: inline-flex;
+#menu #head {
+	display: flex;
+	margin-bottom: 15px;
+	justify-content: space-between;
+}
+#menu #head button {
+	font: inherit;
+	display: flex;
 	align-items: center;
+	padding: 10px;
+	border: 0;
+	color: white;
+	background-color: #780000;
+	font-size: 20px;
 }
-#menu-page .box input {
+#menu #head .icon {
+	margin-right: 2px;
+}
+#menu #searchForm {
+	width: 100%;
+	display: flex;
+}
+#menu #searchForm input {
 	border: none;
-	border-radius: 5px;
+	border-radius: 5px 0 0 5px;
 	font-size: 22px;
 	padding: 10px;
 	width: 100%;
 }
-#menu-page .box .icon {
-	height: 30px;
-	width: 30px;
-	margin: 0px -40px;
-	color: #780000;
-	position: relative;
+#menu #searchForm button {
+	border-radius: 0px 5px 5px 0px;
 }
-#menu-page .menu-items {
-	flex: 1;
-	width: 100%;
-	border-bottom-left-radius: 10px;
-	border-bottom-right-radius: 10px;
-	overflow-y: scroll;
+
+#menu #btn-new {
+	border-radius: 5px;
+	margin-left: 15px;
 }
-#menu-page .row {
+#menu .table-overflow {
+	height: 100%;
 	background-color: white;
-	display: flex;
-	overflow-y: scroll;
+	overflow: auto;
+	border-radius: 5px;
+}
+#menu .menu-items {
 	width: 100%;
 }
-#menu-page .cod,
-#menu-page .description,
-#menu-page .category,
-#menu-page .value {
+#menu .menu-items th {
+	position: sticky;
+	top: 0;
+	background-color: white;
+}
+#menu table {
+	border-spacing: 0;
+}
+#menu td,
+#menu th {
 	color: black;
 	padding: 10px;
 	font-size: 18px;
 	border: 1px solid #888;
 	text-align: center;
-}
-#menu-page .cod {
-	flex: 0.1;
-}
-#menu-page .description {
-	flex: 0.6;
-	text-align: left;
-}
-#menu-page .category {
-	flex: 0.25;
-}
-#menu-page .value {
-	flex: 0.15;
-}
-#menu-page .header {
-	text-align: center;
-	font-weight: bold;
 }

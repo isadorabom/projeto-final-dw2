@@ -7,7 +7,8 @@
 	height: 100%;
 }
 #error404-page h1,
-#error404-page h2 {
+#error404-page h2,
+#error404-page h3 {
 	text-shadow: 5px 0px 10px #000;
 }
 #error404-page h1 {
@@ -15,4 +16,12 @@
 }
 #error404-page h2 {
 	font-size: 4em;
+}
+#error404-page a {
+	text-decoration: none;
+}
+#error404-page h3 {
+	font-size: 3em;
+	cursor: pointer;
+	color: #780000;
 }

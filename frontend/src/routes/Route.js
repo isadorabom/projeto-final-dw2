@@ -1,13 +1,13 @@
 import React from "react";
 import { Route, Redirect } from "react-router-dom";
 
+import { toast } from "react-toastify";
 import {
 	isAuthenticated,
 	userLocal,
 	isTokenExpired,
 	logout
 } from "../services/auth";
-import Home from "../pages/Home";
 
 export default function RouteWrapper({
 	component: Component,
@@ -17,6 +17,10 @@ export default function RouteWrapper({
 }) {
 	if (!isAuthenticated() && isPrivate) {
 		return <Redirect to="/login" />;
+	}
+	if (isAuthenticated() && isAdmin && !userLocal().isAdmin) {
+		toast.error("Sem permissões para esta ação!");
+		return <Redirect to="/" />;
 	}
 
 	if (isTokenExpired()) {

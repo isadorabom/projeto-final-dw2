@@ -53,7 +53,7 @@ export default function Login({ history }) {
 						onChange={handleInputChange}
 						required
 					/>
-					<button type="submit">Entrar</button>
+					<button type="submit">ENTRAR</button>
 				</form>
 			</div>
 		</div>

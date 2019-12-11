@@ -5,7 +5,7 @@
 
 #login-page div.filter {
 	flex: 0.6;
-	backdrop-filter: blur(2px) brightness(50%);
+	backdrop-filter: blur(2px) brightness(65%);
 }
 
 #login-page img.logo {
@@ -27,7 +27,7 @@
 	background-color: #111;
 	flex: 0.4;
 	justify-content: space-around;
-	-webkit-filter: drop-shadow(5px 0px 100px #000);
+	-webkit-filter: drop-shadow(5px 0px 70px #000);
 }
 
 #login-page div.sidebar form {

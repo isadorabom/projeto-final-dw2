@@ -6,16 +6,22 @@ import Route from "./Route";
 import Login from "../pages/Login";
 import Home from "../pages/Home";
 import Menu from "../pages/Menu";
+import Reports from "../pages/Reports";
+import Cards from "../pages/Cards";
+import Users from "../pages/Users";
 import Error404 from "../pages/Error404";
 
 export default function Routes() {
 	return (
 		<BrowserRouter>
 			<Switch>
-				<Route path="/" exact component={Home} isPrivate />
 				<Route path="/login" exact component={Login} />
-
+				<Route path="/" exact component={Home} isPrivate />
+				<Route path="/cards" exact component={Cards} isPrivate />
 				<Route path="/menu" exact component={Menu} isPrivate />
+				<Route path="/reports" exact component={Reports} isPrivate />
+				<Route path="/users" exact component={Users} isPrivate isAdmin />
+
 				<Route path="*" component={Error404} />
 			</Switch>
 		</BrowserRouter>

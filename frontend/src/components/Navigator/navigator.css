@@ -1,0 +1,19 @@
+#navigator {
+	width: 100%;
+	display: flex;
+	background-color: #111;
+	font-size: 22px;
+	font-weight: bold;
+	padding: 10px;
+	align-items: center;
+}
+#navigator a {
+	display: flex;
+	align-items: center;
+}
+#navigator .icon {
+	color: white;
+	height: 22px;
+	width: 22px;
+	margin: 0 20px 0px 10px;
+}

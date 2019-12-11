@@ -1,0 +1,25 @@
+.app-area {
+	display: flex;
+	height: 100%;
+	width: 100%;
+	flex-direction: column;
+	backdrop-filter: blur(10px) brightness(65%);
+	-webkit-backdrop-filter: blur(10px) brightness(65%);
+	overflow: hidden;
+}
+
+.app-area #box {
+	display: flex;
+	border-radius: 5px;
+	overflow: hidden;
+	background-color: rgba(0, 0, 0, 0.5);
+	flex-direction: column;
+	margin: auto;
+	width: 80%;
+	height: 80%;
+}
+.app-area #box.home {
+	width: 700px;
+	height: 450px;
+	background-color: transparent;
+}
