@@ -8,7 +8,6 @@ export default function AppArea(props) {
 		<div className="app-area">
 			<Header />
 			<div id="box" className={props.id === "home-page" ? "home" : ""}>
-				{console.log(props)}
 				{props.id !== "home-page" ? <Navigator>{props.id}</Navigator> : ""}
 				<div id={props.id}>{props.children}</div>
 			</div>

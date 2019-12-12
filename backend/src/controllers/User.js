@@ -13,13 +13,9 @@ module.exports = {
 	},
 
 	async index(req, res) {
-		const user = await User.findOne({ email: req.params.email });
+		const users = await User.find();
 
-		if (user) {
-			return res.json(user);
-		}
-
-		return res.status(400).json({ error: "User not found." });
+		return res.json(users);
 	},
 
 	async destroy(req, res) {

@@ -3,17 +3,20 @@ const { Router } = require("express");
 const UserController = require("./controllers/User");
 const SessionController = require("./controllers/Session");
 const MenuItemController = require("./controllers/MenuItem");
+const ControlCardController = require("./controllers/ControlCard");
 
 const authMiddleware = require("./middlewares/auth");
 const authorizationMiddleware = require("./middlewares/authorization");
 
 const routes = Router();
 
-routes.get("/user/:email", UserController.index);
+routes.get("/user", UserController.index);
 routes.get("/menuitem", MenuItemController.index);
 routes.post("/session", SessionController.store);
-routes.get("/teste", (req, res) => res.json({ ok: true }));
 routes.post("/menuitem", MenuItemController.store);
+routes.get("/menuitem/:cod", MenuItemController.show);
+routes.post("/controlcard", ControlCardController.store);
+routes.delete("/menuitem/:id", MenuItemController.destroy);
 
 routes.use(authMiddleware);
 routes.post("/user", authorizationMiddleware, UserController.store);

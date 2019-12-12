@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { FiSearch, FiPlus } from "react-icons/fi";
+import { ReactDOM } from "react-dom";
+import { FiSearch, FiPlus, FiCheck, FiX } from "react-icons/fi";
 
 import "./menu.css";
 import AppArea from "../../components/AppArea";
@@ -8,28 +9,47 @@ import api from "../../services/api";
 
 export default function Menu() {
 	const [searchMenuItem, setSearchMenuItem] = useState("");
+	const [isCreatingNew, setIsCreatingNew] = useState(false);
+	const [itemWasClicked, setItemWasClicked] = useState(false);
 	const [menuItems, setMenuItems] = useState("");
-	const { newMenuItem, setNewMenuItem } = useState({
-		cod: 0,
+	const [newMenuItem, setNewMenuItem] = useState({
+		cod: "",
 		description: "",
 		category: "",
-		price: 0
+		price: ""
 	});
-	// async function getMenuData() {
-	// 	const response = await api.get("/menuitem").then(res => {
-	// 		setMenuItems(res);
-	// 	});
-	// 	console.log(menuItems.data.toArray());
-	// 	console.log(this.event.target());
-	// 	return response;
-	// }
-	// getMenuData();
-	// function renderMenu() {
-	// 	for (var i = 0; i < menuItems.length; i++) {
-	// 		<MenuItem data={menuItems[]} />;
-	// 	}
-	// }
-	const [isCreatingNew, setIsCreatingNew] = useState(false);
+	async function cancelNewItem() {
+		setNewMenuItem({
+			cod: "",
+			description: "",
+			category: "",
+			price: ""
+		});
+		setIsCreatingNew(false);
+	}
+	console.log(isCreatingNew);
+	async function createNewItem() {
+		try {
+			const response = await api.post("/menuitem/", newMenuItem);
+			setNewMenuItem({ cod: "", description: "", category: "", price: "" });
+			console.log(response);
+			setIsCreatingNew(false);
+			getMenuData();
+		} catch (e) {
+			console.log(e);
+		}
+	}
+
+	async function getMenuData() {
+		const response = await api.get("/menuitem").then(res => {
+			setMenuItems(res.data);
+		});
+		return response;
+	}
+	async function deleteItem(itemId) {
+		const response = await api.delete("/menuitem/" + itemId);
+		console.log(response);
+	}
 	async function handleSearch(e) {
 		e.preventDefault();
 	}
@@ -37,12 +57,19 @@ export default function Menu() {
 		e.preventDefault();
 		setIsCreatingNew(true);
 	}
-	const props = {
-		cod: 10,
-		description: "deu certo",
-		category: "amém",
-		price: 18.9
-	};
+
+	useEffect(() => {
+		getMenuData();
+	}, [isCreatingNew]);
+
+	function handleInputChange(e) {
+		const { className, value } = e.target;
+		setNewMenuItem({
+			...newMenuItem,
+			[className]: value
+		});
+	}
+
 	return (
 		<AppArea id="menu">
 			<div id="head">
@@ -63,24 +90,43 @@ export default function Menu() {
 					ADICIONAR
 				</button>
 			</div>
-			<div className="table-overflow">
-				<table className="menu-items">
-					<thead>
-						<tr>
-							<th className="cod">CÓD</th>
-							<th className="description">DESCRIÇÃO</th>
-							<th className="category">CATEGORIA</th>
-							<th className="price">PREÇO</th>
-							<th className="update" colSpan="2">
-								ATUALIZAR
-							</th>
-						</tr>
-					</thead>
-					<tbody id="table-body">
-						<MenuItem newMenuItem />
-						{/* {renderMenu()} */}
-					</tbody>
-				</table>
+			<div className="table">
+				<div className="row header">
+					<input className="cod" value="COD" disabled />
+					<input className="description" value="DESCRIÇÃO" disabled />
+					<input className="category" value="CATEGORIA" disabled />
+					<input className="price" value="PREÇO" disabled />
+					<input className="control-title" value="ATUALIZAR" disabled />
+				</div>
+				<div className={!isCreatingNew ? "hidden" : "row create-form"}>
+					<input
+						className="cod"
+						value={newMenuItem.cod}
+						onChange={handleInputChange}
+					/>
+					<input
+						className="description"
+						value={newMenuItem.description}
+						onChange={handleInputChange}
+					/>
+					<input
+						className="category"
+						value={newMenuItem.category}
+						onChange={handleInputChange}
+					/>
+					<input
+						className="price"
+						value={newMenuItem.price}
+						onChange={handleInputChange}
+					/>
+					<div className="control submit">
+						<FiX onClick={() => cancelNewItem()} />
+					</div>
+					<div className="control cancel">
+						<FiCheck onClick={() => createNewItem()} />
+					</div>
+				</div>
+				<MenuItem items={menuItems} />
 			</div>
 		</AppArea>
 	);

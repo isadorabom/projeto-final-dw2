@@ -4,13 +4,9 @@
 .edit,
 .delete {
 	cursor: pointer;
-	color: black;
+	color: white;
 }
-tr input {
-	display: table-cell;
-	vertical-align: inherit;
-	width: 100%;
-}
+
 .row .money-symbol {
 	justify-self: left;
 }

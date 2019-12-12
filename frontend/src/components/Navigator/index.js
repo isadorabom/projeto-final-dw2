@@ -13,6 +13,8 @@ export default function AppArea(props) {
 				return "relatórios";
 			case "users":
 				return "usuários";
+			default:
+				return "bug";
 		}
 	}
 	return (

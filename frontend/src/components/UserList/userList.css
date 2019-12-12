@@ -1,0 +1,14 @@
+#users .row {
+	display: flex;
+	justify-content: space-between;
+	margin: 10px;
+}
+#users .name {
+	font-weight: bold;
+}
+#users .admin {
+	font-style: italic;
+}
+#users .list {
+	padding: 12px;
+}

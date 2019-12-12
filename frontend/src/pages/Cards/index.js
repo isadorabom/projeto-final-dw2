@@ -6,5 +6,13 @@ import AppArea from "../../components/AppArea";
 import api from "../../services/api";
 
 export default function Cards() {
-	return <AppArea id="cards"></AppArea>;
+	return (
+		<AppArea id="cards">
+			<div className="top-div">
+				<div className="sidebar-data"></div>
+				<div className="table-numbers"></div>
+			</div>
+			<div className="bottom-bar"></div>
+		</AppArea>
+	);
 }
