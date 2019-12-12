@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { FiSearch, FiPlus } from "react-icons/fi";
 
 import "./users.css";
 import { toast } from "react-toastify";

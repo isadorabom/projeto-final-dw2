@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from "react";
-import { FiSearch, FiPlus } from "react-icons/fi";
+import React from "react";
 
 import "./reports.css";
 import AppArea from "../../components/AppArea";

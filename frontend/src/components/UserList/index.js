@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import "./userList.css";
-import { FiEdit, FiTrash2 } from "react-icons/fi";
+import { FiTrash2 } from "react-icons/fi";
 import api from "../../services/api";
 export default function UserList(props) {
 	if (props.users === "" || props.users === undefined) return <></>;

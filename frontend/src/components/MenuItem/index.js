@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "./menuItem.css";
 import { FiEdit, FiTrash2 } from "react-icons/fi";
 import api from "../../services/api";
