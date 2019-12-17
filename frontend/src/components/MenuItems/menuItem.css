@@ -1,0 +1,64 @@
+.control {
+	cursor: pointer;
+	pointer-events: all;
+	color: white;
+}
+
+.edit, .cancel {
+	border-right: 1px solid #333;
+}
+
+.row .money-symbol {
+	justify-self: left;
+}
+
+#menu .row {
+	display: flex;
+	width: 100%;
+}
+
+#menu .row.header input {
+	background-color: black;
+	/* position: fixed; */
+}
+
+#menu .row input, #menu .row div {
+	pointer-events: none;
+	font: inherit;
+	background-color: rgba(0, 0, 0, 0.5);
+	padding: 5px;
+	border: 1px solid #333;
+	color: white;
+	align-items: center;
+	text-align: center;
+	font-size: 18px;
+}
+
+#menu .cod {
+	width: 10%;
+}
+
+#menu .description {
+	width: 50%;
+}
+
+#menu .category {
+	width: 25%;
+}
+
+#menu .price {
+	width: 20%;
+}
+
+#menu .control {
+	width: 100%;
+	cursor: pointer;
+}
+
+#menu .controls {
+	display: flex;
+}
+
+#menu .control-title, #menu .controls {
+	width: 20%;
+}

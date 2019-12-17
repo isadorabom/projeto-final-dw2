@@ -1,0 +1,33 @@
+#users .row {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	margin: 10px;
+}
+
+#users .row1 {
+	display: flex;
+	justify-content: space-between;
+}
+
+#users .name {
+	font-weight: bold;
+}
+
+#users .email {
+	font-size: .85em;
+	/* font-size: 14px; */
+}
+
+#users .admin {
+	font-style: italic;
+}
+
+#users .row {
+	padding: 10px;
+	border-bottom: 1px solid #333;
+}
+
+#users .list {
+	overflow-y: auto;
+}

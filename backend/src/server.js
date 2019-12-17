@@ -4,10 +4,9 @@ const cors = require("cors");
 const routes = require("./routes");
 
 const url =
-	// 	"mongodb+srv://isadorabom:isadora123@bd1-9c2v9.mongodb.net/test?retryWrites=true&w=majority";
-	"mongodb://localhost:27017/BDcafe";
+	"mongodb+srv://isadorabom:isadora123@bd1-9c2v9.mongodb.net/test?retryWrites=true&w=majority";
+// "mongodb://localhost:27017/BDcafe";
 
-teste
 mongoose
 	.connect(url, { useNewUrlParser: true, useUnifiedTopology: true })
 	.then(() => console.log("MongoDB Connected"))
