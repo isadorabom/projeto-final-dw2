@@ -7,8 +7,13 @@ import UsersList from "../../components/UsersList";
 import api from "../../services/api";
 
 export default function Users() {
-  const [user, setUser] = useState({ name: "", email: "", password: "" });
-  const [usersData, setUsersData] = useState("");
+  const [user, setUser] = useState({
+    name: "",
+    email: "",
+    password: "",
+    isAdmin: false
+  });
+  const [usersList, setUsersList] = useState([]);
 
   function handleInputChange(e) {
     const { id, value } = e.target;
@@ -19,7 +24,7 @@ export default function Users() {
   }
   async function getUsersData() {
     const response = await api.get("/user").then(res => {
-      setUsersData(res.data);
+      setUsersList(res.data);
     });
     return response;
   }
@@ -28,7 +33,7 @@ export default function Users() {
     e.preventDefault();
     try {
       await api.post("/user", user);
-      setUser({ name: "", email: "", password: "" });
+      setUser({ name: "", email: "", password: "", isAdmin: user.isAdmin });
       getUsersData();
       toast.success("Usuário cadastrado!");
     } catch (err) {
@@ -52,10 +57,22 @@ export default function Users() {
   return (
     <AppArea id="users">
       <div className="list">
-        <UsersList users={usersData} functions={{ deleteUser }} />
+        <UsersList users={usersList} functions={{ deleteUser }} />
       </div>
       <form onSubmit={createUser}>
-        <h1 className="title-form">CADASTRAR</h1>
+        <div id="head">
+          <h1 className="title-form">CADASTRAR</h1>
+
+          <button
+            type="button"
+            id={user.isAdmin ? "isAdmin" : "isNotAdmin"}
+            onClick={() => {
+              setUser({ ...user, isAdmin: !user.isAdmin });
+            }}
+          >
+            ADMIN
+          </button>
+        </div>
         <input
           id="name"
           type="name"
@@ -80,9 +97,7 @@ export default function Users() {
           onChange={handleInputChange}
           required
         />
-        <button type="submit" onClick={getUsersData}>
-          CADASTRAR
-        </button>
+        <button type="submit">CADASTRAR</button>
       </form>
     </AppArea>
   );

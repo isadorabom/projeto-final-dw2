@@ -14,7 +14,7 @@ routes.get("/user", UserController.index);
 routes.get("/menuitem", MenuItemController.index);
 routes.post("/session", SessionController.store);
 routes.post("/menuitem", MenuItemController.store);
-routes.get("/menuitem/:cod", MenuItemController.show);
+routes.get("/menuitem/:description", MenuItemController.getByDescription);
 routes.post("/controlcard", ControlCardController.store);
 routes.delete("/menuitem/:id", MenuItemController.destroy);
 

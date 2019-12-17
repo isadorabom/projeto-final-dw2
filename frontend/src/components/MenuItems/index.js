@@ -3,7 +3,6 @@ import "./menuItem.css";
 import { FiEdit, FiTrash2 } from "react-icons/fi";
 export default function MenuItem(props) {
   if (props.items === "" || props.items === undefined) return <></>;
-
   return props.items.map(item => (
     <div className={"row "} key={item._id}>
       <input className="cod" defaultValue={item.cod} />

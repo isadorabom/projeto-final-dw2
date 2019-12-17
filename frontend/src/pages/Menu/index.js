@@ -10,7 +10,7 @@ import api from "../../services/api";
 export default function Menu() {
   const [searchMenuItem, setSearchMenuItem] = useState("");
   const [isCreatingNew, setIsCreatingNew] = useState(false);
-  const [menuItems, setMenuItems] = useState("");
+  const [menuItems, setMenuItems] = useState([]);
   const [newMenuItem, setNewMenuItem] = useState({
     cod: "",
     description: "",
@@ -28,9 +28,8 @@ export default function Menu() {
   }
   async function createNewItem() {
     try {
-      const response = await api.post("/menuitem/", newMenuItem);
+      await api.post("/menuitem/", newMenuItem);
       setNewMenuItem({ cod: "", description: "", category: "", price: "" });
-      console.log(response);
       setIsCreatingNew(false);
       getMenuData();
     } catch (e) {
@@ -39,10 +38,9 @@ export default function Menu() {
   }
 
   async function getMenuData() {
-    const response = await api.get("/menuitem").then(res => {
+    await api.get("/menuitem").then(res => {
       setMenuItems(res.data);
     });
-    return response;
   }
 
   async function deleteItem(itemId) {
@@ -55,8 +53,11 @@ export default function Menu() {
     }
   }
 
-  async function handleSearch(e) {
+  async function searchItem(e) {
     e.preventDefault();
+    await api.get("/menuitem/" + e.target.value).then(res => {
+      setMenuItems(res.data);
+    });
   }
   async function handleNew(e) {
     e.preventDefault();
@@ -78,12 +79,15 @@ export default function Menu() {
   return (
     <AppArea id="menu">
       <div id="head">
-        <form id="searchForm" onSubmit={handleSearch}>
+        <form id="searchForm" onSubmit={e => e.preventDefault()}>
           <input
             type="text"
             placeholder="Pesquise pelo item do cardápio aqui"
             value={searchMenuItem}
-            onChange={e => setSearchMenuItem(e.target.value)}
+            onChange={e => {
+              setSearchMenuItem(e.target.value);
+              searchItem(e);
+            }}
           />
           <button type="submit">
             <FiSearch className="icon" />

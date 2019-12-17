@@ -1,45 +1,66 @@
 #users {
-	height: 100%;
-	display: flex;
-	justify-content: right;
+  height: 100%;
+  display: flex;
+  justify-content: right;
 }
 #users .list {
-	background-color: rgba(0, 0, 0, 0.5);
-	width: 50%;
-	border-radius: 5px;
-	margin: 20px;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 50%;
+  border-radius: 5px;
+  margin: 20px;
 }
 #users form {
-	display: flex;
-	flex-direction: column;
-	margin: auto;
-	width: 50%;
-	height: 100%;
-	align-items: center;
-	justify-content: space-evenly;
-	background-color: rgba(0, 0, 0, 0.5);
-	padding: 20px;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  width: 50%;
+  height: 100%;
+  align-items: center;
+  justify-content: space-evenly;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 20px;
+}
+#users form #head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
 }
 #users h1.title-form {
-	font-size: 26px;
+  font-size: 26px;
 }
 #users input {
-	border: none;
-	border-radius: 5px;
-	font-size: 22px;
-	padding: 10px;
-	background-color: rgba(0, 0, 0, 0.7);
-	color: white;
-	width: 100%;
+  border: none;
+  border-radius: 5px;
+  font-size: 22px;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  width: 100%;
 }
-
+#users #isAdmin,
+#users #isNotAdmin {
+  color: white;
+  border: solid 1px;
+  background: transparent;
+  width: 40%;
+}
+#users #isAdmin {
+  font-weight: 900;
+  transition: ease-in 0.2s;
+  filter: drop-shadow(0px 0px 10px #780000);
+}
+#users #isNotAdmin {
+  transition: ease-out 0.2s;
+  filter: brightness(0.5);
+}
 #users form button {
-	background: #780000;
-	border: solid 1px #780000;
-	padding: 10px;
-	font: inherit;
-	color: white;
-	border-radius: 3px;
-	outline: none;
-	cursor: pointer;
+  background: #780000;
+  border: solid 1px #780000;
+  padding: 10px;
+  font: inherit;
+  color: white;
+  border-radius: 3px;
+  outline: none;
+  cursor: pointer;
 }

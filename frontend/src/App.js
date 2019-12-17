@@ -5,12 +5,12 @@ import "react-toastify/dist/ReactToastify.css";
 import "./styles.css";
 
 function App() {
-	return (
-		<>
-			<Routes />
-			<ToastContainer autoClose={3000} />
-		</>
-	);
+  return (
+    <>
+      <Routes />
+      <ToastContainer autoClose={2000} />
+    </>
+  );
 }
 
 export default App;

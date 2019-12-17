@@ -8,31 +8,31 @@ import { logout } from "../../services/auth";
 // import api from "../../services/api";
 
 export default function Home() {
-	// async function handleSubmit(e) {
-	// 	e.preventDefault();
-	// }
+  // async function handleSubmit(e) {
+  // 	e.preventDefault();
+  // }
 
-	return (
-		<AppArea id="home-page">
-			<NavLink to="/cards">
-				<HomeOption id="COMANDAS" />
-			</NavLink>
-			<NavLink to="/menu">
-				<HomeOption id="CARDÁPIO" />
-			</NavLink>
-			<NavLink to="/reports">
-				<HomeOption id="RELATÓRIOS" />
-			</NavLink>
-			<NavLink to="/users">
-				<HomeOption id="USUÁRIOS" />
-			</NavLink>
-			<NavLink to="/settings" className="disabled">
-				<HomeOption id="CONFIGURAÇÕES" />
-			</NavLink>
+  return (
+    <AppArea id="home-page">
+      <NavLink to="/controlcards">
+        <HomeOption id="COMANDAS" />
+      </NavLink>
+      <NavLink to="/menu">
+        <HomeOption id="CARDÁPIO" />
+      </NavLink>
+      <NavLink to="/reports">
+        <HomeOption id="RELATÓRIOS" />
+      </NavLink>
+      <NavLink to="/users">
+        <HomeOption id="USUÁRIOS" />
+      </NavLink>
+      <NavLink to="/settings">
+        <HomeOption id="CONFIGURAÇÕES" />
+      </NavLink>
 
-			<NavLink to="/" onClick={logout}>
-				<HomeOption id="LOGOUT" />
-			</NavLink>
-		</AppArea>
-	);
+      <NavLink to="/" onClick={logout}>
+        <HomeOption id="LOGOUT" />
+      </NavLink>
+    </AppArea>
+  );
 }
