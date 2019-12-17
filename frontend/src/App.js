@@ -8,7 +8,7 @@ function App() {
   return (
     <>
       <Routes />
-      <ToastContainer autoClose={2000} />
+      <ToastContainer autoClose={2500} />
     </>
   );
 }

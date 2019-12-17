@@ -32,8 +32,9 @@ export default function Menu() {
       setNewMenuItem({ cod: "", description: "", category: "", price: "" });
       setIsCreatingNew(false);
       getMenuData();
-    } catch (e) {
-      console.log(e);
+      toast.success("Item adicionado!");
+    } catch (err) {
+      toast.error("Erro ao adicionar item!");
     }
   }
 
@@ -47,7 +48,7 @@ export default function Menu() {
     try {
       await api.delete("/menuitem/" + itemId);
       getMenuData();
-      toast.success("Item deletado com sucesso!");
+      toast.success("Item deletado!");
     } catch (err) {
       toast.error("Erro ao deletar item!");
     }
