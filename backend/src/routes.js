@@ -25,6 +25,7 @@ routes.delete("/controlcard/:table", ControlCardController.destroy);
 routes.put("/controlcard/", ControlCardController.update);
 
 routes.post("/oldcontrolcard/", OldControlCardController.store);
+routes.get("/oldcontrolcard/", OldControlCardController.index);
 routes.use(authMiddleware);
 routes.post("/user", authorizationMiddleware, UserController.store);
 routes.delete("/user/:id", authorizationMiddleware, UserController.destroy);

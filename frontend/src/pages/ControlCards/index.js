@@ -74,7 +74,6 @@ export default function ControlCards() {
           price: 0
         });
       else {
-        console.log(res.data);
         setMenuItem(res.data);
       }
     });

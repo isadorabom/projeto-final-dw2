@@ -2,14 +2,15 @@ const OldControlCard = require("../models/OldControlCard");
 
 module.exports = {
   async index(req, res) {
-    const items = await OldControlCard.find();
+    const items = await OldControlCard.find({}).populate("user");
+    console.log(items);
     return res.json(items);
   },
 
   async show(req, res) {
     const item = await OldControlCard.find({
       table: req.params.table
-    }).populate("orders.product");
+    }).populate("orders.product", "user");
     //  if (item.length === 0) throw "Não há comanda para essa mesa";
     return res.json(item);
   },

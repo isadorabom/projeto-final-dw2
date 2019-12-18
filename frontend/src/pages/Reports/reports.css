@@ -1,0 +1,18 @@
+#reports {
+  margin: 10px;
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.5);
+  height: 100%;
+  overflow: auto;
+  text-align: center;
+  display: flex;
+  padding: 10px;
+  flex-direction: column;
+}
+#reports .table {
+  overflow-y: auto;
+}
+
+#reports span.title {
+  font-size: 1.6em;
+}

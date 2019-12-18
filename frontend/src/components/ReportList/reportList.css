@@ -1,0 +1,34 @@
+#reports .row {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  font: inherit;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+#reports .row.header {
+  font-weight: bold;
+}
+#reports .row .date {
+  width: 20%;
+}
+#reports .row .datetime {
+  width: 15%;
+}
+#reports .row .table {
+  width: 15%;
+}
+#reports .row .total {
+  width: 25%;
+}
+#reports .row .user {
+  width: 25%;
+}
+
+#reports .row .date,
+#reports .row .datetime,
+#reports .row .table,
+#reports .row .total,
+#reports .row .user {
+  padding: 10px;
+  border: 0.5px solid #333;
+}

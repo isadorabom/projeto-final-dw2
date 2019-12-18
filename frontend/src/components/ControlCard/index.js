@@ -7,7 +7,6 @@ export default function ControlCard(props) {
     props.orders[0].product === undefined
   )
     return <></>;
-  console.log("props", props);
   return props.orders.map(order => (
     <div className={"row "} key={order.product._id}>
       <div className="quantity">{order.quantity}</div>
