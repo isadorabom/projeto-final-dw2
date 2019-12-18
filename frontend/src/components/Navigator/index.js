@@ -7,7 +7,7 @@ export default function AppArea(props) {
     switch (props.children) {
       case "menu":
         return "cardápio";
-      case "cards":
+      case "control-cards":
         return "comandas";
       case "reports":
         return "relatórios";

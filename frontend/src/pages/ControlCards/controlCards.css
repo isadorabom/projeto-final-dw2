@@ -1,0 +1,155 @@
+#control-cards {
+  display: flex;
+  margin: 15px;
+  height: 100%;
+  flex-direction: column;
+  border-radius: 5px;
+  overflow: hidden;
+}
+#control-cards #row-div {
+  display: flex;
+  width: 100%;
+  height: 80%;
+}
+#control-cards #sidebar-data .head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#control-cards #sidebar-data .head button {
+  width: 30%;
+  height: 100%;
+  align-items: center;
+  border: 0;
+  color: white;
+  border-radius: 5px;
+  background-color: #780000;
+}
+#control-cards #sidebar-data {
+  justify-content: center;
+  color: #aaa;
+  background-color: rgba(0, 0, 0, 0.2);
+  width: 50%;
+  padding: 5px 10px;
+  border-right: 1px solid;
+  display: flex;
+  flex-direction: column;
+}
+#control-cards #sidebar-data .head {
+  width: 100%;
+  height: 8%;
+  padding-bottom: 5px;
+  border-bottom: 1px solid;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+#control-cards #sidebar-data .created-at {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  height: 6%;
+  font-size: 1.3em;
+}
+#control-cards #sidebar-data .orders {
+  height: 80%;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.1);
+  overflow-y: auto;
+  margin: 5px;
+}
+#control-cards #sidebar-data .total-price {
+  align-self: flex-end;
+  padding-right: 10px;
+  height: 6%;
+  font-size: 1.4em;
+}
+#control-cards #sidebar-data .total-price span {
+  font-weight: bold;
+}
+#control-cards #sidebar-data.active {
+  color: white;
+}
+#control-cards #table-numbers {
+  background-color: rgba(0, 0, 0, 0.6);
+  width: 50%;
+  overflow-y: auto;
+  padding: 10px;
+  justify-content: space-between;
+  display: flex;
+  flex-wrap: wrap;
+}
+#control-cards #bottom-bar {
+  color: #aaa;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-top: 1px solid;
+  height: 20%;
+  align-items: center;
+  display: flex;
+}
+#control-cards #bottom-bar.active {
+  color: white;
+}
+#control-cards #bottom-bar input,
+#control-cards #bottom-bar button {
+  height: 50%;
+  font: inherit;
+  margin: 10px;
+  border-radius: 5px;
+  font-size: 20px;
+  padding: 10px;
+}
+
+#control-cards #bottom-bar #cod {
+  width: 15%;
+}
+#control-cards #bottom-bar #quantity {
+  width: 15%;
+}
+#control-cards #bottom-bar #price {
+  width: 10%;
+}
+#control-cards #bottom-bar #description {
+  width: 40%;
+}
+#control-cards #bottom-bar #total-price {
+  width: 15%;
+}
+#control-cards #bottom-bar button {
+  width: 15%;
+  align-items: center;
+  border: 0;
+  color: white;
+  background-color: #780000;
+}
+
+#control-cards .quantity,
+#control-cards .description,
+#control-cards .price,
+#control-cards .price-total {
+  font-size: 1.2em;
+}
+#control-cards .row {
+  padding-bottom: 5px;
+  border-bottom: 1px solid;
+}
+#control-cards .row.header {
+  text-align: center;
+  font-size: 0.8em;
+  font-weight: bold;
+}
+#control-cards .quantity {
+  text-align: center;
+  width: 10%;
+}
+#control-cards .description {
+  width: 63%;
+}
+#control-cards .price {
+  text-align: center;
+  width: 16%;
+}
+#control-cards .price-total {
+  text-align: center;
+  width: 16%;
+}

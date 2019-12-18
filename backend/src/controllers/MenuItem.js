@@ -6,19 +6,25 @@ module.exports = {
     return res.json(items);
   },
 
-  async getByCod(req, res) {
-    console.log(req);
-    const item = await MenuItem.find({ cod: req.params.cod });
-
-    return res.json(item);
-  },
-  async getByDescription(req, res) {
-    const item = await MenuItem.find({
-      description: {
-        $regex: ".*" + req.params.description + ".*",
-        $options: "i"
-      }
-    });
+  async show(req, res) {
+    var item = "";
+    switch (isNaN(parseInt(req.params.value, 10))) {
+      case true:
+        item = await MenuItem.find({
+          description: {
+            $regex: ".*" + req.params.value + ".*",
+            $options: "i"
+          }
+        });
+        break;
+      case false:
+        item = await MenuItem.findOne({
+          cod: req.params.value
+        });
+        break;
+    }
+    console.log(item);
+    console.log("---------");
     return res.json(item);
   },
 

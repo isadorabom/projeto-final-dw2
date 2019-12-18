@@ -1,0 +1,32 @@
+#control-cards .table {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100px;
+  height: 70px;
+  margin: 5px;
+  justify-content: space-evenly;
+  cursor: pointer;
+  border-radius: 5px;
+  color: #999;
+  border: 1px solid;
+  /* background-color: rgba(0, 0, 0, 0.3); */
+  background: transparent;
+  filter: drop-shadow(0px 0px 2px black);
+}
+#control-cards .table.selected {
+  color: white;
+  filter: drop-shadow(0px 0px 2px white);
+  /* border: 2px solid; */
+}
+#control-cards .table.selected .icon,
+#control-cards .table.selected .title {
+  zoom: 125%;
+}
+#control-cards .table .icon {
+  font-size: 2em;
+}
+#control-cards .table .title {
+  font-size: 1.5em;
+  font-weight: bold;
+}

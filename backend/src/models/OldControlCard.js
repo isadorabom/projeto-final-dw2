@@ -1,10 +1,9 @@
 const { Schema, model } = require("mongoose");
-const ControlCardSchema = new Schema(
+const OldControlCardSchema = new Schema(
   {
     table: {
       type: Number,
-      required: true,
-      unique: true
+      required: true
     },
     orders: [
       {
@@ -12,6 +11,10 @@ const ControlCardSchema = new Schema(
         quantity: { type: Number }
       }
     ],
+    total: {
+      type: Number,
+      required: true
+    },
     user: {
       type: Schema.Types.ObjectId,
       ref: "User",
@@ -22,4 +25,4 @@ const ControlCardSchema = new Schema(
     timestamps: true
   }
 );
-module.exports = model("ControlCard", ControlCardSchema);
+module.exports = model("OldControlCard", OldControlCardSchema);

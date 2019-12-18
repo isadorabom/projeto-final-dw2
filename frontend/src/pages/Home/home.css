@@ -1,10 +1,11 @@
 #home-page {
-	margin: auto;
-	display: flex;
-	flex-wrap: wrap;
-	align-items: center;
-	justify-content: space-around;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
 }
 .disabled {
-	pointer-events: none;
+  filter: blur(3px) opacity(0.7) brightness(0.2);
+  pointer-events: none;
 }
